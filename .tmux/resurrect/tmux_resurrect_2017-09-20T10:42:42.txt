@@ -1,0 +1,43 @@
+pane	0	0	:console	1	:*	0	:/ws/pleskac-sjc/scripts	1	tcsh	:
+pane	0	1	:telnet	0	:-	0	:/users/pleskac	1	ssh	:ssh iot@10.156.154.27
+pane	0	2	:telnet	0	: 	0	:/users/pleskac	1	tcsh	:
+pane	0	3	:pcycle	0	: 	0	:/users/pleskac	1	tcsh	:
+pane	0	4	:cheatsheet	0	: 	0	:/users/pleskac	1	tcsh	:
+pane	0	5	:scratch	0	: 	0	:/ws/pleskac-sjc/scripts	1	tcsh	:
+pane	1	0	:bld	0	: 	0	:/nobackup/pleskac/0830/vob/ios/sys	1	bash	:/bin/bash /auto/sgbu/bin//nxt
+pane	1	1	:gdb	0	: 	0	:/nobackup/pleskac/0830/vob/ios/sys/obj-armv8el_crb-sparrow	1	tcsh	:
+pane	1	2	:root	0	:-	0	:/nobackup/pleskac/0830	1	tcsh	:
+pane	1	3	:if_nm	0	: 	0	:/nobackup/pleskac/0830/vob/ios/sys/mcp/mcprp/punt-inject	1	tcsh	:
+pane	1	4	:mvpp	0	: 	0	:/nobackup/pleskac/0830/binos/drivers/kernel/3rd_party	1	tcsh	:
+pane	1	5	:netmap	0	: 	0	:/nobackup/pleskac/0830/binos/contrib/netmap/netmap-armada-17.02.2	1	tcsh	:
+pane	1	6	:scratch	1	:*	0	:/users/pleskac/tmp/sparrow	1	tcsh	:
+pane	1	7	:kernel-bld	0	: 	0	:/nobackup/pleskac/0810-kernel/build/tmp/work-shared/arm64-marvell-db-88f7040-tsn/kernel-source	1	bash	:bash
+pane	3	0	:ssh	1	:*	0	:/users/pleskac	1	ssh	:ssh iot-dev-mv
+pane	5	0	:console	1	:*	0	:/users/pleskac	1	telnet	:telnet iotg-usb-ts1 4005
+pane	5	1	:telnet	0	: 	0	:/users/pleskac	1	telnet	:telnet sg-centos-hv 696969
+pane	5	2	:telnet	0	: 	0	:/users/pleskac	1	tcsh	:
+pane	5	3	:server	0	: 	0	:/users/pleskac	1	ssh	:ssh root@sg-centos-hv
+pane	5	4	:scratch	0	: 	0	:/users/pleskac	1	tcsh	:
+pane	5	5	:pcycle	0	:-	0	:/users/pleskac	1	tcsh	:
+window	0	0	1	:*	c29d,94x37,0,0,0
+window	0	1	0	:-	c29f,94x37,0,0,2
+window	0	2	0	: 	c2a0,94x37,0,0,3
+window	0	3	0	: 	c2a4,94x37,0,0,7
+window	0	4	0	: 	c2a1,94x37,0,0,4
+window	0	5	0	: 	6187,94x37,0,0,18
+window	1	0	0	: 	c802,107x37,0,0,5
+window	1	1	0	: 	6436,107x37,0,0,17
+window	1	2	0	:-	c803,107x37,0,0,6
+window	1	3	0	: 	6438,107x37,0,0,19
+window	1	4	0	: 	c806,107x37,0,0,9
+window	1	5	0	: 	642f,107x37,0,0,10
+window	1	6	1	:*	6432,107x37,0,0,13
+window	1	7	0	: 	6433,107x37,0,0,14
+window	3	0	1	:*	6475,108x37,0,0,16
+window	5	0	1	:*	e370,104x37,0,0,21
+window	5	1	0	: 	e371,104x37,0,0,22
+window	5	2	0	: 	e372,104x37,0,0,23
+window	5	3	0	: 	e373,104x37,0,0,24
+window	5	4	0	: 	e374,104x37,0,0,25
+window	5	5	0	:-	e376,104x37,0,0,27
+state	5	0
