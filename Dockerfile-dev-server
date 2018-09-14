@@ -1,0 +1,48 @@
+#
+# python development server (with bpython, tmux, powerline)
+#
+# build cmd:
+#       docker build -t dev-server -f Dockerfile-dev-server .
+#
+
+FROM python:latest
+
+RUN apt-get -y update
+RUN apt-get -y install sudo vim tmux powerline vim-nox
+
+# pip
+RUN pip install --upgrade pip
+RUN pip install bpython
+
+# user
+RUN useradd -ms /bin/bash pleskac
+RUN echo 'pleskac:pleskac' | chpasswd
+RUN adduser pleskac sudo
+USER pleskac
+WORKDIR /home/pleskac
+
+# environment
+RUN git clone https://github.com/dpleskac/env
+RUN ln -s env/.vimrc .vimrc
+RUN ln -s env/.tmux.conf .tmux.conf
+
+# powerline (needs vim-nox installed for vim bindings)
+RUN echo "" >> ~/.bashrc ; \
+    echo "# powerline" >> ~/.bashrc ; \
+    echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then source /usr/share/powerline/bindings/bash/powerline.sh; fi" >> ~/.bashrc
+
+RUN echo "" >> ~/.vimrc ; \
+    echo "\" powerline" >> ~/.vimrc ; \
+    echo "python from powerline.vim import setup as powerline_setup" >> ~/.vimrc ; \
+    echo "python powerline_setup()" >> ~/.vimrc ; \
+    echo "python del powerline_setup" >> ~/.vimrc ; \
+    echo "set laststatus=2" >> ~/.vimrc ;  \
+    echo "set showtabline=2" >> ~/.vimrc ; \
+    echo "set t_Co=256" >> ~/.vimrc
+
+# git config
+RUN git config --global user.email "daniel.pleskac@gmail.com"
+RUN git config --global user.name "Daniel Pleskac"
+RUN git config --global color.ui true
+
+CMD exec /bin/bash

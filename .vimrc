@@ -12,7 +12,7 @@ set incsearch       " Show search pattern while typing
 set shortmess=aI    " Short messages [RO], [+], etc.
 
 syntax enable
-colorscheme morning
+" colorscheme morning
 
 if has("cscope")
 	if filereadable(expand("$CWT/cscope.out"))
@@ -34,4 +34,5 @@ endif
 if filereadable(expand("$CWT/tags"))
 	set tags=$CWT/tags
 endif
+
 
