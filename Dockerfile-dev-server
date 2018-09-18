@@ -8,11 +8,13 @@
 FROM python:latest
 
 RUN apt-get -y update
-RUN apt-get -y install sudo vim tmux powerline vim-nox
+RUN apt-get -y install sudo vim less tmux powerline vim-nox
 
 # pip
 RUN pip install --upgrade pip
-RUN pip install bpython
+
+# bpython - need to run the latest to fix Save to file Traceback issue
+RUN pip install git+https://github.com/bpython/bpython/@master
 
 # user
 RUN useradd -ms /bin/bash pleskac
