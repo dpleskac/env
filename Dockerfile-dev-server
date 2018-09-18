@@ -1,8 +1,11 @@
 #
 # python development server (with bpython, tmux, powerline)
 #
-# build cmd:
+# build & run cmd:
 #       docker build -t dev-server -f Dockerfile-dev-server .
+#
+#	docker run -ti  --name dev-mach-1 --rm dev-server
+#	docker exec -ti dev-mach-1 bash
 #
 
 FROM python:latest
