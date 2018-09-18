@@ -31,6 +31,10 @@ RUN echo "" >> ~/.bashrc ; \
     echo "# powerline" >> ~/.bashrc ; \
     echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then source /usr/share/powerline/bindings/bash/powerline.sh; fi" >> ~/.bashrc
 
+# free ctrl-s for bpython
+RUN echo "" >> ~/.bashrc ; \
+    echo "stty -ixon -ixoff" >> ~/.bashrc ;
+
 RUN echo "" >> ~/.vimrc ; \
     echo "\" powerline" >> ~/.vimrc ; \
     echo "python from powerline.vim import setup as powerline_setup" >> ~/.vimrc ; \
