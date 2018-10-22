@@ -4,7 +4,7 @@
 # build & run cmd:
 #       docker build -t dev-server -f Dockerfile-dev-server .
 #
-#	docker run -ti  --name dev-mach-1 --rm dev-server
+#	docker run -ti --privileged --device /dev/fuse:/dev/fuse --volume /Users/pleskac/.ssh/:/home/pleskac/.ssh --name dev-mach-1 --rm dev-server
 #	docker exec -ti dev-mach-1 bash
 #
 
@@ -12,6 +12,7 @@ FROM python:latest
 
 RUN apt-get -y update
 RUN apt-get -y install sudo vim less tmux powerline vim-nox
+RUN apt-get -y install kmod sshfs net-tools
 
 # pip
 RUN pip install --upgrade pip
@@ -55,3 +56,8 @@ RUN git config --global user.name "Daniel Pleskac"
 RUN git config --global color.ui true
 
 CMD exec /bin/bash
+
+# mount sshfs
+#   sudo chmod o+rw /dev/fuse
+#   mkdir ~/secrets
+#   sshfs store:groups/infra/secrets/ ~/secrets/
